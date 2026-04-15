@@ -10,6 +10,9 @@ export default defineConfig({
     react(),
     legacy()
   ],
+
+  base: '/WandaLand/',  
+
   test: {
     globals: true,
     environment: 'jsdom',
