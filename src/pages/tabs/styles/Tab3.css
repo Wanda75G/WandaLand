@@ -4,8 +4,7 @@
   gap: 15px;
   max-width: 100%;
   margin: 0 auto;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 15px;
 }
 
 .productos-grid ion-card:hover {
@@ -13,12 +12,72 @@
   transition: 0.3s ease;
 }
 
-@media (min-width: 768px) and (max-width: 992px)  {
+/* Móviles pequeños (hasta 480px) */
+@media (max-width: 480px) {
   .productos-grid {
-    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .productos-grid ion-card {
+    margin: 0;
+  }
+  
+  .info-productos img {
+    height: 120px;
+  }
+  
+  .text-products p {
+    font-size: 0.7rem;
+  }
+  
+  .precio-producto {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablets (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .productos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .info-productos img {
+    height: 140px;
+  }
+}
+
+/* Tablets grandes y laptops pequeñas (769px - 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+  .productos-grid {
+    grid-template-columns: repeat(3, 1fr);
     align-items: stretch;
     max-width: 95%;
+    gap: 15px;
   }
+  
+  .info-productos h3 {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+  }
+  
+  .info-productos img {
+    height: 145px;
+  }
+}
+
+/* Laptops grandes y desktop (993px - 1200px) */
+@media (min-width: 993px) and (max-width: 1200px) {
+  .productos-grid {
+    grid-template-columns: repeat(4, 1fr);
+    align-items: stretch;
+    max-width: 95%;
+    gap: 15px;
+  }
+  
   .info-productos h3 {
     font-size: 1rem;
     font-weight: bold;
@@ -27,18 +86,21 @@
   }
 }
 
-@media (min-width: 992px) {
+/* Pantallas extra grandes (1201px en adelante) */
+@media (min-width: 1201px) {
   .productos-grid {
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(5, 1fr);
     align-items: stretch;
-    max-width: 95%;
+    max-width: 90%;
+    gap: 20px;
   }
-
+  
   .info-productos h3 {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #ffffff;
-    margin: 0;
+    font-size: 1.1rem;
+  }
+  
+  .text-products p {
+    font-size: 0.9rem;
   }
 }
 
@@ -50,7 +112,8 @@
   box-shadow: 0 4px 10px rgba(37, 37, 37, 0.3);
   display: flex;
   flex-direction: column;
-  height: 100%; 
+  height: 100%;
+  overflow: hidden;
 }
 
 .productos-grid ion-card ion-card-content {
@@ -59,6 +122,7 @@
   justify-content: space-between;
   height: 100%;
   flex: 1;
+  padding: 12px;
 }
 
 .info-productos {
@@ -66,9 +130,9 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 2px;
-  flex: 1 1 auto; 
-  justify-content: flex-start; 
+  gap: 8px;
+  flex: 1 1 auto;
+  justify-content: flex-start;
   user-select: none;
 }
 
@@ -77,30 +141,32 @@
   height: 150px;
   object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   border: 1px solid #444;
 }
 
 .info-productos h3 {
   font-weight: bold;
   color: #ffffff;
-  margin: 0;
+  margin: 5px 0;
+  font-size: 1rem;
 }
 
 /* texto información*/
-.text-products{
+.text-products {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  min-width: 200px;
+  width: 100%;
   user-select: none;
 }
 
 .text-products p {
   font-size: 0.8rem;
-  min-width: 100px;
+  width: 100%;
   color: #b0b0b0;
+  margin: 4px 0;
 }
 
 .text-products span {
@@ -116,11 +182,13 @@
   font-size: 1.1rem;
   color: whitesmoke;
   user-select: none;
+  margin: 8px 0;
 }
 
 .precio-producto span {
   color: var(--green-pastel);
   user-select: none;
+  font-weight: bold;
 }
 
 /* Boton comprar */
@@ -128,13 +196,185 @@
   --border-radius: 15px;
   --background: var(--green-pastel);
   color: var(--green-soldier);
-  margin-top: 15px; 
+  margin-top: 15px;
   width: 100%;
   font-weight: bold;
   text-transform: capitalize;
   user-select: none;
+  --padding-top: 12px;
+  --padding-bottom: 12px;
 }
 
 .comprar:hover {
   --box-shadow: 0 4px 15px var(--shadow-filter);
+}
+
+/* ============================================ */
+/*   ARREGLOS PARA EL MODAL DE FINALIZAR COMPRA */
+/* ============================================ */
+
+/* Modal de finalizar compra */
+ion-modal.finalizar-compra-modal,
+.modal-compra {
+  --height: auto;
+  --width: 90%;
+  --max-width: 500px;
+  --border-radius: 20px;
+  --background: #1e1e1e;
+}
+
+/* Contenedor del modal */
+.modal-content-compra {
+  padding: 20px;
+  background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
+  border-radius: 20px;
+}
+
+/* Título del modal */
+.modal-content-compra h2 {
+  color: var(--green-pastel);
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+/* Lista de opciones de compra */
+.opciones-compra {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 5px;
+}
+
+/* Cada opción de producto */
+.opcion-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px;
+  background: #2a2a2a;
+  border-radius: 12px;
+  border: 1px solid #444;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.opcion-item:hover {
+  background: #333;
+  border-color: var(--green-pastel);
+  transform: translateX(5px);
+}
+
+.opcion-item.selected {
+  border-color: var(--green-pastel);
+  background: #2a3a2a;
+  box-shadow: 0 0 10px rgba(var(--green-pastel-rgb), 0.3);
+}
+
+.opcion-imagen {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #444;
+}
+
+.opcion-info {
+  flex: 1;
+}
+
+.opcion-info h3 {
+  color: white;
+  margin: 0 0 5px 0;
+  font-size: 1rem;
+}
+
+.opcion-info p {
+  color: #b0b0b0;
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.opcion-precio {
+  color: var(--green-pastel);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Botones del modal */
+.modal-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.modal-buttons ion-button {
+  flex: 1;
+  --border-radius: 12px;
+}
+
+.btn-cancelar {
+  --background: #444;
+  --background-hover: #555;
+  color: white;
+}
+
+.btn-confirmar {
+  --background: var(--green-pastel);
+  color: var(--green-soldier);
+  font-weight: bold;
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  ion-modal.finalizar-compra-modal,
+  .modal-compra {
+    --width: 95%;
+    --max-width: 95%;
+  }
+  
+  .modal-content-compra {
+    padding: 15px;
+  }
+  
+  .opcion-item {
+    gap: 10px;
+    padding: 8px;
+  }
+  
+  .opcion-imagen {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .opcion-info h3 {
+    font-size: 0.9rem;
+  }
+  
+  .opcion-info p {
+    font-size: 0.75rem;
+  }
+  
+  .opcion-precio {
+    font-size: 0.9rem;
+  }
+  
+  .modal-buttons {
+    flex-direction: column;
+  }
+}
+
+/* Para tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  .opciones-compra {
+    max-height: 450px;
+  }
+  
+  .opcion-imagen {
+    width: 55px;
+    height: 55px;
+  }
 }
