@@ -11,7 +11,7 @@ export default defineConfig({
     legacy()
   ],
 
-  base: '/WandaLand/',  
+  base: '/',  
 
   test: {
     globals: true,
