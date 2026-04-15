@@ -48,7 +48,7 @@ const Home: React.FC = () => {
             <div className="hero-section">
               <IonIcon icon={rocketOutline} className="hero-icon" />
               <IonText color="light">
-                <h1 className="hero-title">Wandita<span className="accent">Home</span></h1>
+                <h1 className="hero-title">Todo<span className="accent">Home</span></h1>
               </IonText>
               <IonText color="medium">
                 <p className="hero-subtitle"></p>
