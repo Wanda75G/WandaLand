@@ -1,0 +1,77 @@
+/*Containers*/
+.forecast-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 0;
+  width: 100%;
+  border-bottom: 1px solid #363636;
+}
+
+.forecast-item:last-child {
+  border-bottom: none;
+}
+
+.container-temps {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100%;
+  font-size: 0.9rem;
+  gap: 2px;
+}
+
+.container-hums {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/*Titulos*/
+.day-name {
+  text-align: left;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  color: var(--white);
+}
+
+.day-temp {
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--green-pastel);
+}
+
+.temp-min {
+  color: var(--ion-color-danger);
+}
+
+.temp-max {
+  color: var(--ion-color-success);
+}
+
+.day-humidity {
+  font-size: 0.8rem;
+  color: var(--grey-ligth);
+}
+
+.day-desc {
+  font-size: 0.8rem;
+  color: #888;
+  width: 80px;
+  text-align: right;
+  color: var(--grey-ligth);
+}
+
+/*Iconos*/
+.icon-hum {
+  font-size: 0.9rem;
+  color: var(--ion-color-primary)
+}
+
+.mini-icon {
+  width: 40px;
+}
+

@@ -1,0 +1,61 @@
+.Tab4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100%;
+  color: var(--ion-color-primary);
+  font-size: 30px;
+}
+
+
+.dark-card {
+  --background: #1e1e1e;
+  border-radius: 16px;
+  border: 1px solid #333;
+  margin-bottom: 20px;
+}
+
+.dark-card ion-card-title {
+  color: var(--green-pastel);
+}
+
+.dark-card ion-card-subtitle {
+  color: var(--white);
+}
+
+.dark-card ion-card-content {
+  color: var(--grey-ligth);
+}
+
+.dark-list ion-icon {
+  color: var(--green-pastel);
+}
+
+.dark-list h3 {
+  color: var(--white);
+}
+
+.dark-list p {
+  color: var(--grey-ligth);
+}
+
+.dark-list {
+  background: transparent !important;
+  margin-bottom: 20px;
+}
+
+.dark-list ion-item {
+  --background: #1e1e1e;
+  --border-color: #333;
+  --padding-start: 16px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+.map-container {
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid #00e5ff; /* Toque neón de omniHub */
+}
