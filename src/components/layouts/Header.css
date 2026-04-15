@@ -68,7 +68,79 @@ ion-title {
   flex: 1;
 }
 
+/* ============================================ */
+/*        COLORES MORADO LLAMATIVO              */
+/* ============================================ */
+
+/* Toolbar principal con gradiente morado vibrante */
 ion-toolbar {
   --padding-start: 0;
   --padding-end: 0;
+  --background: linear-gradient(135deg, #9b30ff 0%, #6a0dad 50%, #da70d6 100%);
+  --color: #ffffff;
+  --border-style: none;
+  box-shadow: 0 2px 12px rgba(156, 48, 255, 0.4);
+}
+
+/* Efecto hover para el toolbar (opcional) */
+ion-toolbar:hover {
+  --background: linear-gradient(135deg, #aa44ff 0%, #7b1fa2 50%, #e884e4 100%);
+  transition: all 0.3s ease;
+}
+
+/* Estilo para los títulos dentro del toolbar */
+ion-title {
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.5px;
+}
+
+/* Botones del header (si los tienes) */
+ion-toolbar ion-button {
+  --color: #ffffff;
+  --color-hover: #f0d0ff;
+  --ripple-color: #da70d6;
+}
+
+/* Iconos dentro del toolbar */
+ion-toolbar ion-icon {
+  color: #ffffff;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+ion-toolbar ion-icon:hover {
+  color: #f0d0ff;
+  transition: color 0.2s ease;
+}
+
+/* Logo o imágenes dentro del header */
+.header-logo {
+  filter: drop-shadow(0 2px 4px rgba(106, 13, 173, 0.3));
+}
+
+/* Fondo alternativo para el contenido izquierdo */
+.header-left-content {
+  background: rgba(106, 13, 173, 0.2);
+  border-radius: 20px;
+  padding: 4px 8px;
+  backdrop-filter: blur(4px);
+}
+
+/* Estilo para cualquier texto dentro del toolbar */
+ion-toolbar * {
+  color: #ffffff;
+}
+
+/* Barra de búsqueda si existe dentro del toolbar */
+ion-toolbar ion-searchbar {
+  --background: rgba(255, 255, 255, 0.15);
+  --color: #ffffff;
+  --placeholder-color: rgba(255, 255, 255, 0.7);
+  --icon-color: #ffffff;
+}
+
+/* Selector de opciones en toolbar */
+ion-toolbar ion-select {
+  --color: #ffffff;
+  --placeholder-color: rgba(255, 255, 255, 0.8);
 }
